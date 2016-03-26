@@ -101,7 +101,7 @@ def writeRPfile(init, pars, varls, odes, eqs):
 	vdim = len(varls)
 	pdim = len(pars)
 	parnames = pars.keys()
-	f = open('/pylib/lpi/ode/rp.py', 'w')
+	f = open('/data/lib/lpi/ode/rp.py', 'w')
 	f.write("import numpy as np\n\n")
 
 	#write main f() function

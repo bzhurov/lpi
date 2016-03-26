@@ -28,6 +28,7 @@ def solve(**kwargs):
 		total = kwargs['total']
 	if 'dt' in kwargs.keys():
 		dt = kwargs['dt']
+	
 	if 'dtsave' in kwargs.keys():
 		dtsave = kwargs['dtsave']
 	if 'relax' in kwargs.keys():
@@ -83,9 +84,9 @@ def solve(**kwargs):
 		if issaveFile and np.abs( dtsave * savenum - solver.t ) < dt:
 			np.savetxt(saveFile, [np.concatenate(([solver.t], solver.y))], delimiter = ';')
 			savenum += 1
-		# else:
-		# 	y.append(solver.y)
-		# 	t.append(solver.t)
+		
+	 	y.append(solver.y)
+	 	t.append(solver.t)
 
 	t = np.array(t)
 	y = np.array(y)
